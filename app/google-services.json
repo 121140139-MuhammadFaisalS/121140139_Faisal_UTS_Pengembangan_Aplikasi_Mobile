@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "824230977709",
+    "project_id": "login-register-121140139",
+    "storage_bucket": "login-register-121140139.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:824230977709:android:30853d58af5db086fb2624",
+        "android_client_info": {
+          "package_name": "com.faisal.uts_mobile_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbh0Wl5C32RFccmsdlcfah4Dfj_E3U_8c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
