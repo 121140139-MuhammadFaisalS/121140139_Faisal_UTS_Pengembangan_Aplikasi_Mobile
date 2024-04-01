@@ -3,13 +3,11 @@ package com.faisal.uts_mobile_app
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 class BerandaActivity : AppCompatActivity() {
 
@@ -19,7 +17,7 @@ class BerandaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_beranda)
 
-        recyclerView = findViewById(R.id.recyclerView)
+        recyclerView = findViewById(R.id.recyclerViewUsers) // ID recyclerViewUsers
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         // Mengambil data pengguna dari API
@@ -27,12 +25,7 @@ class BerandaActivity : AppCompatActivity() {
     }
 
     private fun fetchUsers() {
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://reqres.in/api/users")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-
-        val apiService = retrofit.create(ApiService::class.java)
+        val apiService = RetrofitClient.retrofitInstance.create(ApiService::class.java)
         val call = apiService.getUsers()
 
         call.enqueue(object : Callback<UserListResponse> {
